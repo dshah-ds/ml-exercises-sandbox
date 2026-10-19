@@ -1,4 +1,4 @@
-# Exercises-
+# ML Exercises Sandbox
 
 A personal sandbox for hands-on experiments and self-driven exercises outside formal coursework. Raw, curiosity-led, and open to feedback — the polished projects live elsewhere.
 
@@ -30,7 +30,13 @@ A personal sandbox for hands-on experiments and self-driven exercises outside fo
 
 ---
 
-## 📬 Connect
+## Author
 
-- LinkedIn: [www.linkedin.com/in/devam-a-shah](https://linkedin.com/in/devam-a-shah)
+**Devam Shah** · Data Scientist & Analytics Engineer
+
+- Website: [devam-shah.com](https://devam-shah.com)
+- LinkedIn: [linkedin.com/in/devam-a-shah](https://www.linkedin.com/in/devam-a-shah)
 - GitHub: [github.com/dshah-ds](https://github.com/dshah-ds)
+- Medium: [@devamshah26](https://medium.com/@devamshah26)
+- Blog: [One Notebook at a Time](https://onenotebookatatime.blogspot.com)
+

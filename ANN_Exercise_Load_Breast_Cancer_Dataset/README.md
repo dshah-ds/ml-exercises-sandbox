@@ -23,7 +23,7 @@ This notebook walks through **8 progressive exercises** covering core ANN concep
 
 ```
 ├── ANN_exercise_load_breast_dataset.ipynb   ← Main notebook (run this)
-├── README.md                                        ← This file
+├── README.md                                ← This file
 └── requirements.txt                                 ← Python dependencies
 ```
 
@@ -48,8 +48,8 @@ This notebook walks through **8 progressive exercises** covering core ANN concep
 
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/YOUR_USERNAME/ANN_exercise_load_breast_dataset.git
-cd ANN_exercise_load_breast_dataset
+git clone https://github.com/dshah-ds/ml-exercises-sandbox.git
+cd ml-exercises-sandbox/ANN_Exercise_Load_Breast_Cancer_Dataset
 ```
 
 ### 2. Install dependencies
@@ -63,20 +63,25 @@ jupyter notebook ANN_exercise_load_breast_dataset.ipynb
 ```
 
 ### Or open in Google Colab
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YOUR_USERNAME/ANN_exercise_load_breast_dataset/blob/main/ANN_exercise_load_breast_dataset.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dshah-ds/ml-exercises-sandbox/blob/main/ANN_Exercise_Load_Breast_Cancer_Dataset/ANN_exercise_load_breast_dataset.ipynb)
 
 ---
 
 ## 📊 Key Results Summary
 
-| Experiment | Test Accuracy | Note |
-|---|---|---|
-| Baseline ANN (16 neurons, ReLU, Adam) | ~97% | Strong baseline |
-| MSE Loss (same arch) | ~96% | Slightly lower, theoretically wrong choice |
-| SGD Optimizer | ~93–96% | Slower convergence at lr=0.01 |
-| RMSProp Optimizer | ~96–97% | Comparable to Adam |
-| Sigmoid Hidden Layer | ~95–97% | ReLU performs comparably on shallow net |
-| 2 Hidden Layers | ~96–97% | Minimal gain on 569 samples |
+All on the same 114 held-out patients (one patient = 0.88 points).
+
+| Experiment | Test Accuracy | Test Loss | Note |
+|---|---|---|---|
+| Baseline ANN (16 ReLU, Adam, cross-entropy) | **94.74%** (108/114) | 0.1300 | Train accuracy 97.58% |
+| MSE loss (same architecture) | not tracked | 0.0457 | R² 0.80; MSE and cross-entropy losses aren't on the same scale |
+| Adam (re-trained) | 94.74% | 0.1500 | |
+| SGD, lr 0.01 | 95.61% (109/114) | 0.1904 | One patient better than Adam |
+| RMSProp | 95.61% (109/114) | 0.1059 | Lowest test loss |
+| Sigmoid hidden layer | 91.23% (104/114) | 0.3588 | ReLU wins by 3.51 points |
+| 2 hidden layers (16 + 12) | 94.74% | 0.1225 | Train 97.14%; no gain from depth |
+
+The optimizers are effectively tied at this test-set size; the clearest result is ReLU over Sigmoid in the hidden layer.
 
 ---
 
@@ -84,8 +89,8 @@ jupyter notebook ANN_exercise_load_breast_dataset.ipynb
 
 1. **Always use `binary_crossentropy`** for binary classification — MSE is for regression.
 2. **Never fit the scaler on test data** — this is data leakage.
-3. **Adam is the default optimizer** for most deep learning tasks.
-4. **ReLU is preferred in hidden layers** — Sigmoid causes vanishing gradients in deeper nets.
+3. **Adam is a sensible default**, though here SGD and RMSProp each got one more test patient right.
+4. **ReLU is preferred in hidden layers**: even in this 1-layer net it beat Sigmoid by 3.51 points.
 5. **More layers ≠ always better** — monitor the train-test accuracy gap for overfitting.
 6. **Save both model AND scaler** when deploying — the scaler is part of the inference pipeline.
 
@@ -122,4 +127,4 @@ See the final section of the notebook for a complete code walkthrough of each st
 
 ---
  
-*Author: Devam Shah | [LinkedIn](www.linkedin.com/in/devam-a-shah)*
+*Author: Devam Shah | [LinkedIn](https://www.linkedin.com/in/devam-a-shah) | Interactive write-up: [devam-shah.com/projects/exercises](https://devam-shah.com/projects/exercises/)*

@@ -8,7 +8,7 @@ A personal sandbox for hands-on experiments and self-driven exercises outside fo
 
 | Folder | Description |
 |--------|-------------|
-| [ANN_Exercise_Load_Breast_Cancer_Dataset](./ANN_Exercise_Load_Breast_Cancer_Dataset) | Artificial Neural Network exercises using real-world datasets - load_breast_cancer dataset |
+| [ANN_Exercise_Load_Breast_Cancer_Dataset](./ANN_Exercise_Load_Breast_Cancer_Dataset) | Eight controlled ANN experiments on the Wisconsin breast-cancer data (569 patients): loss, optimizer, activation and depth. Baseline 94.74% test accuracy; ReLU beat Sigmoid by 3.51 points; optimizers tied within one patient. [Interactive write-up](https://devam-shah.com/projects/exercises/) |
 
 ---
 
